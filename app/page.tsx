@@ -1,9 +1,16 @@
 import Image from "next/image";
+import Navbar from "./components/navbar/_navbar";
+import SocialsBar from "./components/socials_bar/_socials_bar";
+import Spacer from "./components/spacer/_spacer";
 import styles from "./page.module.scss";
 
 export default function Home() {
 	return (
 		<main className={styles.main}>
+			<Navbar />
+
+			<Spacer />
+
 			<div>
 				<h1>Steve&apos;s teacher</h1>
 				<p>
@@ -12,6 +19,8 @@ export default function Home() {
 					</a>
 				</p>
 			</div>
+
+			<Spacer />
 
 			<div className={styles["image-container"]}>
 				<a
@@ -29,10 +38,16 @@ export default function Home() {
 				</a>
 			</div>
 
+			<Spacer />
+
 			<p>
 				Psst! Website is still in development, come back later for some cool
 				stuff!
 			</p>
+
+			<Spacer />
+
+			<SocialsBar />
 		</main>
 	);
 }
