@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Navbar from "./components/navbar/_navbar";
 import SocialsBar from "./components/socials_bar/_socials_bar";
 import Spacer from "./components/spacer/_spacer";
 import styles from "./page.module.scss";
@@ -7,7 +6,7 @@ import styles from "./page.module.scss";
 export default function Home() {
 	return (
 		<main className={styles.main}>
-			<Navbar />
+			{/* <Navbar /> */}
 
 			<Spacer />
 
