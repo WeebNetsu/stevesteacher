@@ -1,0 +1,81 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: #fff;
+  background: #1a1919;
+}
+
+a {
+  text-decoration: none;
+  color: #b6b3b3;
+}
+a::before {
+  content: "{ ";
+  color: rgb(126, 82, 247);
+  font-weight: bold;
+}
+a::after {
+  content: " }";
+  color: rgb(126, 82, 247);
+  font-weight: bold;
+}
+a.image-link::before {
+  content: "";
+}
+a.image-link::after {
+  content: "";
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  min-height: 100vh;
+}
+
+.image-container {
+  width: 30vw;
+  height: 17vw;
+  overflow: hidden;
+  position: relative;
+}
+
+@media (max-width: 1300px) {
+  .image-container {
+    width: 90vw;
+    height: 48vw;
+  }
+}
+.socials-bar {
+  font-size: 1.4rem;
+}
+.socials-bar .social-icon {
+  margin: 1rem;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.socials-bar .social-icon:hover.email-icon {
+  color: #e7191b;
+}
+.socials-bar .social-icon:hover.youtube-icon {
+  color: #fe0100;
+}
+.socials-bar .social-icon:hover.twitter-icon {
+  color: #cecece;
+}
+.socials-bar .social-icon:hover.discord-icon {
+  color: #5462eb;
+}
+
+/*# sourceMappingURL=index.css.map */
