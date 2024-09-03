@@ -1,0 +1,51 @@
+@use "globals";
+
+.main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1rem;
+	min-height: 100vh;
+}
+
+.image-container {
+	width: 30vw;
+	height: 17vw;
+	overflow: hidden;
+	position: relative;
+}
+
+@media (max-width: 1300px) {
+	.image-container {
+		width: 90vw;
+		height: 48vw;
+	}
+}
+
+.socials-bar {
+	font-size: 1.4rem;
+
+	.social-icon {
+		margin: 1rem;
+		cursor: pointer;
+		transition: 0.5s;
+
+		&:hover {
+			&.email-icon {
+				color: #e7191b;
+			}
+
+			&.youtube-icon {
+				color: #fe0100;
+			}
+
+			&.twitter-icon {
+				color: #cecece;
+			}
+
+			&.discord-icon {
+				color: #5462eb;
+			}
+		}
+	}
+}
