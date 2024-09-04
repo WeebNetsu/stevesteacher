@@ -1,0 +1,31 @@
+footer {
+	text-align: center;
+	margin-bottom: 2rem;
+
+	.socials-bar {
+		font-size: 1.4rem;
+
+		.social-text {
+			font-size: 1rem;
+		}
+
+		.social-icon {
+			margin: 1rem;
+			cursor: pointer;
+
+			&:hover {
+				&.email-icon {
+					color: #e7191b;
+				}
+
+				&.youtube-icon {
+					color: #fe0100;
+				}
+
+				&.discord-icon {
+					color: #5462eb;
+				}
+			}
+		}
+	}
+}

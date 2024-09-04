@@ -23,56 +23,60 @@
 
 		<title>Steve's teacher</title>
 
-		<link rel="shortcut icon" href="icon.png" type="image/x-icon" />
+		<link
+			rel="shortcut icon"
+			href="./src/images/logo.jpg"
+			type="image/x-icon"
+		/>
 
 		<link rel="stylesheet" href="./src/css/index.css" />
 	</head>
-	<body>
+	<body class="container">
+		<header>
+			<h1>Steve&apos;s teacher</h1>
+			<p>
+				<a target="_blank" href="https://www.youtube.com/@stevesteacher">
+					Learn To Code
+				</a>
+			</p>
+		</header>
+
 		<main class="main">
-			<br />
-			<br />
-			<br />
-
-			<div>
-				<h1>Steve&apos;s teacher</h1>
-				<p>
-					<a target="_blank" href="https://www.youtube.com/@stevesteacher">
-						Learn To Code
-					</a>
-				</p>
-			</div>
-
-			<br />
-			<br />
-			<br />
-
-			<div class="image-container">
+			<div class="video-thumbnail">
 				<a
 					href="https://youtube.com/playlist?list=PLYBJzqz8zpWaiGbFcSdlh08zlpe8Tl_Gh&si=cb8WlQayDPHOkuFm"
 					target="_blank"
 					class="image-link"
 				>
 					<image
-						style="border-radius: 5px; width: 100%"
+						class="rounded mx-auto d-block img-fluid"
+						style="width: 100%; max-width: 500px"
 						src="./src/images/nim.jpg"
 						alt="Nim Programming Language Thumbnail"
 					/>
 				</a>
 			</div>
 
-			<br />
-			<br />
-			<br />
-
-			<p>
+			<p style="margin-top: 4rem">
 				Psst! Website is still in development, come back later for some cool
 				stuff!
 			</p>
+		</main>
 
-			<br />
-			<br />
-			<br />
+		<aside>
+			<nav class="navigation">
+				<ul class="nav justify-content-center">
+					<li class="nav-item">
+						<a
+							href="./pages/learn/computers/systems-technologies/introduction-to-the-motherboard.html"
+							>Learn Computers</a
+						>
+					</li>
+				</ul>
+			</nav>
+		</aside>
 
+		<footer>
 			<div class="socials-bar">
 				<a
 					class="social-icon youtube-icon"
@@ -106,34 +110,14 @@
 					<i class="bi bi-discord"></i>
 				</a>
 
-				<!-- <a class="social-icon email-icon" href="#">
-					<i class="bi bi-envelope"></i>
-				</a> -->
-
-				<!--  <Modal
-                    open={showConfirmEmail}
-                    closable={false}
-                    okText={"Cancel"}
-                    cancelText={
-                        <a
-                            class={`styles["social-icon"]} styles["email-icon"]}`}
-                            onClick={() => {
-                                setShowConfirmEmail(true);
-                            }}
-                            href="mailto:stevesteacheryt@gmail.com"
-                        >
-                            Send Email
-                        </a>
-                    }
-                >
-                    <Typography>
-                        Please do not send job offers, fake sponsorships or quick money scams
-                        to this email, they will automatically be filtered into spam. This
-                        email is for my supporters to contact me for coding help or
-                        discussions.
-                    </Typography>
-                </Modal> -->
+				<a
+					class="social-icon github-icon"
+					target="_blank"
+					href="https://github.com/WeebNetsu"
+				>
+					<i class="bi bi-github"></i>
+				</a>
 			</div>
-		</main>
+		</footer>
 	</body>
 </html>
