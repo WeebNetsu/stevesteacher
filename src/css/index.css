@@ -64,8 +64,37 @@ header {
   flex-direction: column;
   align-items: center;
 }
-.main .video-thumbnail {
+.main .video-carousel {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+.main .video-carousel .video-thumbnail {
   margin-top: 2rem;
+}
+.main .video-carousel .video-thumbnail img.blur {
+  transition-duration: 0.5s;
+  filter: blur(2px);
+}
+.main .video-carousel .video-thumbnail img.blur:hover {
+  filter: blur(0px);
+}
+.main .video-carousel .video-thumbnail.navigation-image {
+  width: 20%;
+  transition-duration: 0.5s;
+  position: relative;
+}
+.main .video-carousel .video-thumbnail.navigation-image:hover {
+  width: 21%;
+}
+.main .video-carousel .video-thumbnail.navigation-image .nav-icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  text-shadow: -1px 1px 2px black;
 }
 
 nav.navigation {
