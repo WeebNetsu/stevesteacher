@@ -16,8 +16,8 @@ jQuery(() => {
 		const isNext = clickedThumbnail.hasClass("next");
 
 		// Move images based on the clicked direction
-		let newCenterIndex;
-		let untouchedImage;
+		let newCenterIndex = -1;
+		let untouchedImage: JQuery<HTMLElement> | undefined;
 
 		if (isPrev) {
 			newCenterIndex =
@@ -28,8 +28,6 @@ jQuery(() => {
 			newCenterIndex =
 				centerIndex === thumbnails.length - 1 ? 0 : centerIndex + 1;
 		}
-
-		console.log(untouchedImage);
 
 		// Swap images and links in the right order
 		const newCenterImage = images.eq(newCenterIndex ?? 0);
