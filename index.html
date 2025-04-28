@@ -14,6 +14,7 @@
 		<!-- Bootstrap -->
 		<link rel="stylesheet" href="/src/libs/bootstrap/css/bootstrap.min.css" />
 		<script src="/src/libs/bootstrap/js/bootstrap.min.js"></script>
+		<script src="/src/libs/jquery.js"></script>
 
 		<!-- Bootstrap icons (fontawesome 5 is full of crap, so instead use this) -->
 		<link
@@ -38,19 +39,55 @@
 		</header>
 
 		<main class="main">
-			<div class="video-thumbnail">
-				<a
-					href="https://youtube.com/playlist?list=PLYBJzqz8zpWaiGbFcSdlh08zlpe8Tl_Gh&si=cb8WlQayDPHOkuFm"
-					target="_blank"
-					class="image-link"
-				>
-					<image
-						class="rounded mx-auto d-block img-fluid"
-						style="width: 100%; max-width: 500px"
-						src="/src/images/nim.jpg"
-						alt="Nim Programming Language Thumbnail"
-					/>
-				</a>
+			<div class="video-carousel">
+				<div class="video-thumbnail navigation-image prev">
+					<a
+						href="https://youtube.com/playlist?list=PLYBJzqz8zpWbIZrm_U_Bg83qYfyduoflT&si=VDr5mzbCjcz3PctC"
+						target="_blank"
+						class="image-link"
+					>
+						<img
+							class="rounded mx-auto d-block img-fluid blur"
+							style="width: 100%; max-width: 500px"
+							src="/src/images/meteorjs.jpg"
+							alt="Meteor.js Programming Framework Thumbnail"
+						/>
+					</a>
+
+					<i class="nav-icon bi bi-chevron-double-left"></i>
+				</div>
+
+				<div class="video-thumbnail">
+					<a
+						href="https://youtube.com/playlist?list=PLYBJzqz8zpWaiGbFcSdlh08zlpe8Tl_Gh&si=cb8WlQayDPHOkuFm"
+						target="_blank"
+						class="image-link"
+					>
+						<img
+							class="rounded mx-auto d-block img-fluid"
+							style="width: 100%; max-width: 500px"
+							src="/src/images/nim.jpg"
+							alt="Nim Programming Language Thumbnail"
+						/>
+					</a>
+				</div>
+
+				<div class="video-thumbnail navigation-image next">
+					<a
+						href="https://youtube.com/playlist?list=PLYBJzqz8zpWYHDS2qS-UstfWdQRLrbQ9L&si=1rLHHpQDiuCOEu7u"
+						target="_blank"
+						class="image-link"
+					>
+						<img
+							class="rounded mx-auto d-block img-fluid blur"
+							style="width: 100%; max-width: 500px"
+							src="/src/images/python.jpg"
+							alt="Python Programming Language Thumbnail"
+						/>
+					</a>
+
+					<i class="nav-icon bi bi-chevron-double-right"></i>
+				</div>
 			</div>
 
 			<p style="margin-top: 4rem">
@@ -115,5 +152,7 @@
 				</a>
 			</div>
 		</footer>
+
+		<script src="src/js/index.js"></script>
 	</body>
 </html>

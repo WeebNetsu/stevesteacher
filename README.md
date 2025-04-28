@@ -2,6 +2,6 @@
 
 ## Developer Notes
 
-### SCSS
+### Running Compilers
 
-Compiling SCSS: `sass --watch src/css:src/css`
+`python run.py`
