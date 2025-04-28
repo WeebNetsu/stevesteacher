@@ -1,47 +1,70 @@
 jQuery(() => {
+	let isAnimating = false;
+
 	$("div.video-thumbnail.navigation-image").on("click", (e) => {
+		if (isAnimating) return;
+		isAnimating = true;
+
 		const clickedThumbnail = $(e.currentTarget);
-		const centerThumbnail = $(".video-thumbnail").not(".navigation-image");
-
-		// Get all images and links
-		const thumbnails = $(".video-thumbnail");
-		const images = thumbnails.find("img");
-		const links = thumbnails.find("a");
-
-		// Get index of the current center image
-		const centerIndex = thumbnails.index(centerThumbnail);
-
-		// Get the clicked direction (prev or next)
 		const isPrev = clickedThumbnail.hasClass("prev");
-		const isNext = clickedThumbnail.hasClass("next");
 
-		// Move images based on the clicked direction
-		let newCenterIndex = -1;
-		let untouchedImage: JQuery<HTMLElement> | undefined;
+		// Get all thumbnails in order: prev, center, next
+		const prevThumbnail = $(".video-thumbnail.prev");
+		const centerThumbnail = $(".video-thumbnail").not(".navigation-image");
+		const nextThumbnail = $(".video-thumbnail.next");
 
-		if (isPrev) {
-			newCenterIndex =
-				centerIndex === 0 ? thumbnails.length - 1 : centerIndex - 1;
-			untouchedImage = $(".video-thumbnail.next");
-		} else if (isNext) {
-			untouchedImage = $(".video-thumbnail.prev");
-			newCenterIndex =
-				centerIndex === thumbnails.length - 1 ? 0 : centerIndex + 1;
-		}
+		// Store current state
+		const prevImage = prevThumbnail.find("img");
+		const centerImage = centerThumbnail.find("img");
+		const nextImage = nextThumbnail.find("img");
 
-		// Swap images and links in the right order
-		const newCenterImage = images.eq(newCenterIndex ?? 0);
-		const newCenterLink = links.eq(newCenterIndex ?? 0);
+		const prevLink = prevThumbnail.find("a");
+		const centerLink = centerThumbnail.find("a");
+		const nextLink = nextThumbnail.find("a");
 
-		// Temporarily store the current center image and link
-		const tempSrc = images.eq(centerIndex).attr("src");
-		const tempHref = links.eq(centerIndex).attr("href");
+		// Store current attributes with fallbacks
+		const prevSrc = prevImage.attr("src") ?? "";
+		const centerSrc = centerImage.attr("src") ?? "";
+		const nextSrc = nextImage.attr("src") ?? "";
 
-		// Swap the new center image with the old one
-		images.eq(centerIndex).attr("src", newCenterImage.attr("src") ?? "");
-		links.eq(centerIndex).attr("href", newCenterLink.attr("href") ?? "");
+		const prevHref = prevLink.attr("href") ?? "#";
+		const centerHref = centerLink.attr("href") ?? "#";
+		const nextHref = nextLink.attr("href") ?? "#";
 
-		newCenterImage.attr("src", tempSrc ?? "");
-		newCenterLink.attr("href", tempHref ?? "");
+		// Add animation classes
+		const direction = isPrev ? -1 : 1;
+		prevThumbnail.css("transform", `translateX(${direction * 100}%)`);
+		centerThumbnail.css("transform", `translateX(${direction * 100}%)`);
+		nextThumbnail.css("transform", `translateX(${direction * 100}%)`);
+
+		// Wait for animation to complete
+		setTimeout(() => {
+			// Reset transforms
+			prevThumbnail.css("transform", "");
+			centerThumbnail.css("transform", "");
+			nextThumbnail.css("transform", "");
+
+			if (isPrev) {
+				// Rotate counter-clockwise: prev -> center -> next
+				prevImage.attr("src", nextSrc);
+				centerImage.attr("src", prevSrc);
+				nextImage.attr("src", centerSrc);
+
+				prevLink.attr("href", nextHref);
+				centerLink.attr("href", prevHref);
+				nextLink.attr("href", centerHref);
+			} else {
+				// Rotate clockwise: prev <- center <- next
+				prevImage.attr("src", centerSrc);
+				centerImage.attr("src", nextSrc);
+				nextImage.attr("src", prevSrc);
+
+				prevLink.attr("href", centerHref);
+				centerLink.attr("href", nextHref);
+				nextLink.attr("href", prevHref);
+			}
+
+			isAnimating = false;
+		}, 500); // Match this with the CSS transition duration
 	});
 });

@@ -69,12 +69,16 @@ header {
   gap: 1rem;
   align-items: center;
   justify-content: center;
+  perspective: 1000px;
 }
 .main .video-carousel .video-thumbnail {
   margin-top: 2rem;
+  transition: all 0.5s ease-in-out;
+}
+.main .video-carousel .video-thumbnail img {
+  transition: all 0.5s ease-in-out;
 }
 .main .video-carousel .video-thumbnail img.blur {
-  transition-duration: 0.5s;
   filter: blur(2px);
 }
 .main .video-carousel .video-thumbnail img.blur:hover {
@@ -82,11 +86,13 @@ header {
 }
 .main .video-carousel .video-thumbnail.navigation-image {
   width: 20%;
-  transition-duration: 0.5s;
   position: relative;
+  opacity: 0.7;
+  transition: all 0.5s ease-in-out;
 }
 .main .video-carousel .video-thumbnail.navigation-image:hover {
   width: 21%;
+  opacity: 0.9;
 }
 .main .video-carousel .video-thumbnail.navigation-image .nav-icon {
   position: absolute;
@@ -95,6 +101,10 @@ header {
   transform: translate(-50%, -50%);
   font-size: 3rem;
   text-shadow: -1px 1px 2px black;
+  transition: all 0.3s ease-in-out;
+}
+.main .video-carousel .video-thumbnail.navigation-image .nav-icon:hover {
+  transform: translate(-50%, -50%) scale(1.2);
 }
 
 nav.navigation {

@@ -16,13 +16,16 @@ header {
 		gap: 1rem;
 		align-items: center;
 		justify-content: center;
+		perspective: 1000px;
 
 		.video-thumbnail {
 			margin-top: 2rem;
+			transition: all 0.5s ease-in-out;
 
 			img {
+				transition: all 0.5s ease-in-out;
+
 				&.blur {
-					transition-duration: 0.5s;
 					filter: blur(2px);
 
 					&:hover {
@@ -33,11 +36,13 @@ header {
 
 			&.navigation-image {
 				width: 20%;
-				transition-duration: 0.5s;
 				position: relative;
+				opacity: 0.7;
+				transition: all 0.5s ease-in-out;
 
 				&:hover {
 					width: 21%;
+					opacity: 0.9;
 				}
 
 				.nav-icon {
@@ -47,6 +52,11 @@ header {
 					transform: translate(-50%, -50%);
 					font-size: 3rem;
 					text-shadow: -1px 1px 2px black;
+					transition: all 0.3s ease-in-out;
+
+					&:hover {
+						transform: translate(-50%, -50%) scale(1.2);
+					}
 				}
 			}
 		}
