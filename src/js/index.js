@@ -26,36 +26,44 @@ jQuery(() => {
         const prevHref = (_d = prevLink.attr("href")) !== null && _d !== void 0 ? _d : "#";
         const centerHref = (_e = centerLink.attr("href")) !== null && _e !== void 0 ? _e : "#";
         const nextHref = (_f = nextLink.attr("href")) !== null && _f !== void 0 ? _f : "#";
-        // Add animation classes
+        // Set slide direction for center
         const direction = isPrev ? -1 : 1;
-        prevThumbnail.css("transform", `translateX(${direction * 100}%)`);
-        centerThumbnail.css("transform", `translateX(${direction * 100}%)`);
-        nextThumbnail.css("transform", `translateX(${direction * 100}%)`);
-        // Wait for animation to complete
+        centerThumbnail.css('--slide-x', `${direction * 100}%`);
+        // 1. Slide center to the side
+        centerThumbnail.addClass('slide-to-side');
         setTimeout(() => {
-            // Reset transforms
-            prevThumbnail.css("transform", "");
-            centerThumbnail.css("transform", "");
-            nextThumbnail.css("transform", "");
-            if (isPrev) {
-                // Rotate counter-clockwise: prev -> center -> next
-                prevImage.attr("src", nextSrc);
-                centerImage.attr("src", prevSrc);
-                nextImage.attr("src", centerSrc);
-                prevLink.attr("href", nextHref);
-                centerLink.attr("href", prevHref);
-                nextLink.attr("href", centerHref);
-            }
-            else {
-                // Rotate clockwise: prev <- center <- next
-                prevImage.attr("src", centerSrc);
-                centerImage.attr("src", nextSrc);
-                nextImage.attr("src", prevSrc);
-                prevLink.attr("href", centerHref);
-                centerLink.attr("href", nextHref);
-                nextLink.attr("href", prevHref);
-            }
-            isAnimating = false;
-        }, 500); // Match this with the CSS transition duration
+            // 2. Shake while at the side
+            centerThumbnail.removeClass('slide-to-side');
+            centerThumbnail.addClass('magic-shake');
+            // 3. Mid-shake, swap image
+            setTimeout(() => {
+                if (isPrev) {
+                    prevImage.attr('src', nextSrc);
+                    centerImage.attr('src', prevSrc);
+                    nextImage.attr('src', centerSrc);
+                    prevLink.attr('href', nextHref);
+                    centerLink.attr('href', prevHref);
+                    nextLink.attr('href', centerHref);
+                }
+                else {
+                    prevImage.attr('src', centerSrc);
+                    centerImage.attr('src', nextSrc);
+                    nextImage.attr('src', prevSrc);
+                    prevLink.attr('href', centerHref);
+                    centerLink.attr('href', nextHref);
+                    nextLink.attr('href', prevHref);
+                }
+            }, 250); // Mid-shake (0.5s shake)
+            // 4. After shake, slide back
+            setTimeout(() => {
+                centerThumbnail.removeClass('magic-shake');
+                centerThumbnail.addClass('slide-back');
+                setTimeout(() => {
+                    centerThumbnail.removeClass('slide-back');
+                    centerThumbnail.css('--slide-x', '0%');
+                    isAnimating = false;
+                }, 300); // Slide-back duration
+            }, 500); // Shake duration
+        }, 300); // Slide-to-side duration
     });
 });
