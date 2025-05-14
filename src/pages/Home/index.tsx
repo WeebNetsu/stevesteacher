@@ -1,8 +1,33 @@
+import Carousel from './components/Carousel';
+import { CarouselThumbnailModel } from './components/CarouselThumbnail';
 import './style.scss';
 
 import React from 'react';
 
 const HomePage: React.FC = () => {
+    const carouselData: CarouselThumbnailModel[] = [
+        {
+            alt: 'Python Programming Language Thumbnail',
+            image: '/src/assets/images/python.jpg',
+            link: 'https://youtube.com/playlist?list=PLYBJzqz8zpWYHDS2qS-UstfWdQRLrbQ9L&si=1rLHHpQDiuCOEu7u',
+        },
+        {
+            alt: 'Nim Programming Language Thumbnail',
+            image: '/src/assets/images/nim.jpg',
+            link: 'https://youtube.com/playlist?list=PLYBJzqz8zpWaiGbFcSdlh08zlpe8Tl_Gh&si=cb8WlQayDPHOkuFm',
+        },
+        {
+            alt: 'Meteor.js Programming Framework Thumbnail',
+            image: '/src/assets/images/meteorjs.jpg',
+            link: 'https://youtube.com/playlist?list=PLYBJzqz8zpWbIZrm_U_Bg83qYfyduoflT&si=VDr5mzbCjcz3PctC',
+        },
+        {
+            alt: 'Python Programming Language Thumbnail',
+            image: '/src/assets/images/python.jpg',
+            link: 'https://youtube.com/playlist?list=PLYBJzqz8zpWYHDS2qS-UstfWdQRLrbQ9L&si=1rLHHpQDiuCOEu7u',
+        },
+    ];
+
     return (
         <div>
             <header>
@@ -15,56 +40,7 @@ const HomePage: React.FC = () => {
             </header>
 
             <main class="main">
-                <div class="video-carousel">
-                    <div class="video-thumbnail navigation-image prev">
-                        <a
-                            href="https://youtube.com/playlist?list=PLYBJzqz8zpWbIZrm_U_Bg83qYfyduoflT&si=VDr5mzbCjcz3PctC"
-                            target="_blank"
-                            class="image-link"
-                        >
-                            <img
-                                class="rounded mx-auto d-block img-fluid blur"
-                                style="width: 100%; max-width: 500px"
-                                src="/src/assets/images/meteorjs.jpg"
-                                alt="Meteor.js Programming Framework Thumbnail"
-                            />
-                        </a>
-
-                        <i class="nav-icon bi bi-chevron-double-left"></i>
-                    </div>
-
-                    <div class="video-thumbnail">
-                        <a
-                            href="https://youtube.com/playlist?list=PLYBJzqz8zpWaiGbFcSdlh08zlpe8Tl_Gh&si=cb8WlQayDPHOkuFm"
-                            target="_blank"
-                            class="image-link"
-                        >
-                            <img
-                                class="rounded mx-auto d-block img-fluid"
-                                style="width: 100%; max-width: 500px"
-                                src="/src/assets/images/nim.jpg"
-                                alt="Nim Programming Language Thumbnail"
-                            />
-                        </a>
-                    </div>
-
-                    <div class="video-thumbnail navigation-image next">
-                        <a
-                            href="https://youtube.com/playlist?list=PLYBJzqz8zpWYHDS2qS-UstfWdQRLrbQ9L&si=1rLHHpQDiuCOEu7u"
-                            target="_blank"
-                            class="image-link"
-                        >
-                            <img
-                                class="rounded mx-auto d-block img-fluid blur"
-                                style="width: 100%; max-width: 500px"
-                                src="/src/assets/images/python.jpg"
-                                alt="Python Programming Language Thumbnail"
-                            />
-                        </a>
-
-                        <i class="nav-icon bi bi-chevron-double-right"></i>
-                    </div>
-                </div>
+                <Carousel data={carouselData} />
 
                 <p style="margin-top: 4rem">
                     Psst! Website is still in development, come back later for some cool stuff!
