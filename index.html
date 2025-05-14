@@ -5,154 +5,22 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<!-- Add site description -->
 		<meta
 			name="description"
 			content="Homepage for Steve's teacher, the educational programming YouTuber."
 		/>
 
-		<!-- Bootstrap -->
-		<link rel="stylesheet" href="/src/libs/bootstrap/css/bootstrap.min.css" />
-		<script src="/src/libs/bootstrap/js/bootstrap.min.js"></script>
-		<script src="/src/libs/jquery.js"></script>
-
-		<!-- Bootstrap icons (fontawesome 5 is full of crap, so instead use this) -->
-		<link
-			rel="stylesheet"
-			href="/src/libs/bootstrap-icons/font/bootstrap-icons.min.css"
-		/>
-
 		<title>Steve's teacher</title>
 
-		<link rel="shortcut icon" href="/src/images/logo.jpg" type="image/x-icon" />
-
-		<link rel="stylesheet" href="/src/css/index.css" />
+		<link
+			rel="shortcut icon"
+			href="/src/assets/images/logo.jpg"
+			type="image/x-icon"
+		/>
+		<meta name="color-scheme" content="light dark" />
 	</head>
-	<body class="container">
-		<header>
-			<h1>Steve&apos;s teacher</h1>
-			<p>
-				<a target="_blank" href="https://www.youtube.com/@stevesteacher">
-					Learn To Code
-				</a>
-			</p>
-		</header>
-
-		<main class="main">
-			<div class="video-carousel">
-				<div class="video-thumbnail navigation-image prev">
-					<a
-						href="https://youtube.com/playlist?list=PLYBJzqz8zpWbIZrm_U_Bg83qYfyduoflT&si=VDr5mzbCjcz3PctC"
-						target="_blank"
-						class="image-link"
-					>
-						<img
-							class="rounded mx-auto d-block img-fluid blur"
-							style="width: 100%; max-width: 500px"
-							src="/src/images/meteorjs.jpg"
-							alt="Meteor.js Programming Framework Thumbnail"
-						/>
-					</a>
-
-					<i class="nav-icon bi bi-chevron-double-left"></i>
-				</div>
-
-				<div class="video-thumbnail">
-					<a
-						href="https://youtube.com/playlist?list=PLYBJzqz8zpWaiGbFcSdlh08zlpe8Tl_Gh&si=cb8WlQayDPHOkuFm"
-						target="_blank"
-						class="image-link"
-					>
-						<img
-							class="rounded mx-auto d-block img-fluid"
-							style="width: 100%; max-width: 500px"
-							src="/src/images/nim.jpg"
-							alt="Nim Programming Language Thumbnail"
-						/>
-					</a>
-				</div>
-
-				<div class="video-thumbnail navigation-image next">
-					<a
-						href="https://youtube.com/playlist?list=PLYBJzqz8zpWYHDS2qS-UstfWdQRLrbQ9L&si=1rLHHpQDiuCOEu7u"
-						target="_blank"
-						class="image-link"
-					>
-						<img
-							class="rounded mx-auto d-block img-fluid blur"
-							style="width: 100%; max-width: 500px"
-							src="/src/images/python.jpg"
-							alt="Python Programming Language Thumbnail"
-						/>
-					</a>
-
-					<i class="nav-icon bi bi-chevron-double-right"></i>
-				</div>
-			</div>
-
-			<p style="margin-top: 4rem">
-				Psst! Website is still in development, come back later for some cool
-				stuff!
-			</p>
-		</main>
-
-		<aside>
-			<nav class="navigation">
-				<ul class="nav justify-content-center">
-					<li class="nav-item">
-						<a
-							href="/pages/learn/computers/systems-technologies/introduction-to-the-motherboard.html"
-							>Learn Computers</a
-						>
-					</li>
-				</ul>
-			</nav>
-		</aside>
-
-		<footer>
-			<div class="socials-bar">
-				<a
-					class="social-icon youtube-icon"
-					target="_blank"
-					href="https://www.youtube.com/@stevesteacher"
-				>
-					<i class="bi bi-youtube"></i>
-				</a>
-
-				<a
-					class="social-icon youtube-icon"
-					target="_blank"
-					href="https://www.youtube.com/@programmervibe"
-				>
-					<i class="bi bi-youtube"></i>
-				</a>
-
-				<a
-					class="social-icon twitter-icon"
-					target="_blank"
-					href="https://twitter.com/stevesteacherYT"
-				>
-					<i class="bi bi-twitter-x"></i>
-				</a>
-
-				<a
-					class="social-icon discord-icon"
-					target="_blank"
-					href="https://discord.com/invite/NGtD9s6"
-				>
-					<i class="bi bi-discord"></i>
-				</a>
-
-				<a
-					class="social-icon github-icon"
-					target="_blank"
-					href="https://github.com/WeebNetsu"
-				>
-					<i class="bi bi-github"></i>
-				</a>
-			</div>
-		</footer>
-
-		<script src="src/js/index.js"></script>
+	<body>
+		<div id="app"></div>
+		<script prerender type="module" src="/src/index.tsx"></script>
 	</body>
 </html>
