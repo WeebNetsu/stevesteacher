@@ -1,5 +1,6 @@
 import React from 'react';
 import HomePage from '../../pages/Home';
+import MotherboardIntroductionsPage from '../../pages/Learn/Computers/SystemsTechnologies/MotherboardIntroduction';
 
 interface RouteModel {
     [key: string]: {
@@ -15,6 +16,10 @@ export const publicRoutes: RouteModel = {
     home: {
         path: '/',
         element: HomePage,
+    },
+    learnComputersSystemsTechnologiesMotherboardIntroductions: {
+        path: '/learn/computers/systems-technologies/motherboard-introductions',
+        element: MotherboardIntroductionsPage,
     },
     // default: {
     //     path: '*',

@@ -16,39 +16,39 @@ $background-color: #1a1919;
 // }
 
 body {
-	padding-top: 1rem;
-	color: $foreground-color;
-	background: $background-color;
+    padding-top: 1rem;
+    color: $foreground-color;
+    background: $background-color;
 }
 
 a {
-	text-decoration: none;
-	color: #b6b3b3;
-	transition: 0.5s;
+    text-decoration: none;
+    color: #b6b3b3;
+    transition: 0.5s;
 
-	&:hover {
-		color: #fff;
-	}
+    &:hover {
+        color: #fff;
+    }
 
-	&::before {
-		content: "{ ";
-		color: rgb(126, 82, 247);
-		font-weight: bold;
-	}
+    &::before {
+        content: '{ ';
+        color: rgb(126, 82, 247);
+        font-weight: bold;
+    }
 
-	&::after {
-		content: " }";
-		color: rgb(126, 82, 247);
-		font-weight: bold;
-	}
+    &::after {
+        content: ' }';
+        color: rgb(126, 82, 247);
+        font-weight: bold;
+    }
 
-	&.image-link {
-		&::before {
-			content: "";
-		}
+    &.image-link {
+        &::before {
+            content: '';
+        }
 
-		&::after {
-			content: "";
-		}
-	}
+        &::after {
+            content: '';
+        }
+    }
 }

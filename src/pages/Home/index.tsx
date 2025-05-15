@@ -1,10 +1,14 @@
+import { useLocation } from 'preact-iso';
 import Carousel from './components/Carousel';
 import { CarouselThumbnailModel } from './components/CarouselThumbnail';
 import './style.scss';
 
 import React from 'react';
+import { publicRoutes } from '../../utils/constants/routes';
 
 const HomePage: React.FC = () => {
+    const location = useLocation();
+
     const carouselData: CarouselThumbnailModel[] = [
         {
             alt: 'Python Programming Language Thumbnail',
@@ -51,7 +55,13 @@ const HomePage: React.FC = () => {
                 <nav>
                     <ul>
                         <li>
-                            <a href="/pages/learn/computers/systems-technologies/introduction-to-the-motherboard.html">
+                            <a
+                                onClick={() => {
+                                    location.route(
+                                        publicRoutes.learnComputersSystemsTechnologiesMotherboardIntroductions.path,
+                                    );
+                                }}
+                            >
                                 Learn Computers
                             </a>
                         </li>
