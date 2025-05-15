@@ -12,22 +12,22 @@ const HomePage: React.FC = () => {
     const carouselData: CarouselThumbnailModel[] = [
         {
             alt: 'Python Programming Language Thumbnail',
-            image: '/src/assets/images/python.jpg',
+            image: '/images/python.jpg',
             link: 'https://youtube.com/playlist?list=PLYBJzqz8zpWYHDS2qS-UstfWdQRLrbQ9L&si=1rLHHpQDiuCOEu7u',
         },
         {
             alt: 'Nim Programming Language Thumbnail',
-            image: '/src/assets/images/nim.jpg',
+            image: '/images/nim.jpg',
             link: 'https://youtube.com/playlist?list=PLYBJzqz8zpWaiGbFcSdlh08zlpe8Tl_Gh&si=cb8WlQayDPHOkuFm',
         },
         {
             alt: 'Meteor.js Programming Framework Thumbnail',
-            image: '/src/assets/images/meteorjs.jpg',
+            image: '/images/meteorjs.jpg',
             link: 'https://youtube.com/playlist?list=PLYBJzqz8zpWbIZrm_U_Bg83qYfyduoflT&si=VDr5mzbCjcz3PctC',
         },
         {
             alt: 'Python Programming Language Thumbnail',
-            image: '/src/assets/images/python.jpg',
+            image: '/images/python.jpg',
             link: 'https://youtube.com/playlist?list=PLYBJzqz8zpWYHDS2qS-UstfWdQRLrbQ9L&si=1rLHHpQDiuCOEu7u',
         },
     ];
