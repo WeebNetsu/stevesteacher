@@ -1,0 +1,21 @@
+.card-component {
+    background-color: #000;
+    width: 20%;
+    min-width: 300px;
+    height: 10rem;
+    border-radius: 15px;
+    padding: 1rem;
+    color: #ccc;
+
+    .card-title {
+        text-align: center;
+    }
+
+    .card-desc {
+        text-align: center;
+    }
+
+    .card-link {
+        text-align: center;
+    }
+}

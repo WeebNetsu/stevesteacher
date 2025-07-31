@@ -4,6 +4,7 @@ import { CarouselThumbnailModel } from './components/CarouselThumbnail';
 import './style.scss';
 
 import React from 'react';
+import { Link } from 'wouter-preact';
 import { publicRoutes } from '../../utils/constants/routes';
 
 const HomePage: React.FC = () => {
@@ -55,6 +56,9 @@ const HomePage: React.FC = () => {
                 <nav>
                     <ul>
                         <li>
+                            <Link to={publicRoutes.learn.path}>Learn</Link>
+                        </li>
+                        {/* <li>
                             <a
                                 onClick={() => {
                                     location.route(
@@ -65,6 +69,17 @@ const HomePage: React.FC = () => {
                                 Learn Computers
                             </a>
                         </li>
+                        <li>
+                            <a
+                                onClick={() => {
+                                    location.route(
+                                        publicRoutes.learnComputersSystemsTechnologiesMotherboardIntroductions.path,
+                                    );
+                                }}
+                            >
+                                Learn Finances
+                            </a>
+                        </li> */}
                     </ul>
                 </nav>
             </aside>

@@ -1,6 +1,7 @@
 import React from 'react';
 import HomePage from '../../pages/Home';
-import MotherboardIntroductionsPage from '../../pages/Learn/Computers/SystemsTechnologies/MotherboardIntroduction';
+import LearnPage from '../../pages/Learn';
+import LearnComputersPage from '../../pages/LearnComputers';
 
 interface RouteModel {
     [key: string]: {
@@ -17,10 +18,18 @@ export const publicRoutes: RouteModel = {
         path: '/',
         element: HomePage,
     },
-    learnComputersSystemsTechnologiesMotherboardIntroductions: {
-        path: '/learn/computers/systems-technologies/motherboard-introductions',
-        element: MotherboardIntroductionsPage,
+    learnComputers: {
+        path: '/learn/computers',
+        element: LearnComputersPage,
     },
+    learn: {
+        path: '/learn',
+        element: LearnPage,
+    },
+    // learnComputersSystemsTechnologiesMotherboardIntroductions: {
+    //     path: '/learn/computers/systems-technologies/motherboard-introductions',
+    //     element: MotherboardIntroductionsPage,
+    // },
     // default: {
     //     path: '*',
     //     element: NotFoundPage,

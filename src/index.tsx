@@ -1,38 +1,30 @@
-import { LocationProvider, Route, Router, hydrate, prerender as ssr } from 'preact-iso';
-
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import Footer from './components/Footer';
 import NotFound from './pages/_404';
 import './style.scss';
 
+import { render } from 'preact';
 import React from 'react';
+import { Route, Switch } from 'wouter-preact';
 import { publicRoutes } from './utils/constants/routes';
 
 const App: React.FC = () => {
     return (
-        <LocationProvider>
-            {/* <Header /> */}
-
-            <main>
-                <Router>
-                    {Object.values(publicRoutes).map((route) => (
-                        <Route path={route.path} component={route.element} />
-                    ))}
-                    <Route default component={NotFound} />
-                </Router>
-            </main>
+        <div>
+            <Switch>
+                {Object.values(publicRoutes).map((route) => (
+                    <Route path={route.path} component={route.element} />
+                ))}
+                <Route path={'*'} component={NotFound} />
+            </Switch>
 
             <Footer />
-        </LocationProvider>
+        </div>
     );
 };
 
 export default App;
 
 if (typeof window !== 'undefined') {
-    hydrate(<App />, document.getElementById('app'));
-}
-
-export async function prerender(data) {
-    return await ssr(<App {...data} />);
+    render(<App />, document.getElementById('app'));
 }

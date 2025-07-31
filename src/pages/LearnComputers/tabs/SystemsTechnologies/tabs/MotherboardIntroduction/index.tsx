@@ -1,6 +1,5 @@
 import { useLocation } from 'preact-iso';
 import React from 'react';
-import { publicRoutes } from '../../../../../utils/constants/routes';
 
 const MotherboardIntroductionsPage: React.FC = () => {
     const location = useLocation();
@@ -115,7 +114,7 @@ const MotherboardIntroductionsPage: React.FC = () => {
 
             <br />
 
-            <footer>
+            {/* <footer>
                 <div class="socials-bar">
                     <a
                         class="social-icon discord-icon"
@@ -139,7 +138,7 @@ const MotherboardIntroductionsPage: React.FC = () => {
                         <i class="bi bi-arrow-right"></i>
                     </a>
                 </div>
-            </footer>
+            </footer> */}
         </div>
     );
 };
